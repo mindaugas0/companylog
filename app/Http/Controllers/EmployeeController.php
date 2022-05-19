@@ -146,6 +146,9 @@ class EmployeeController extends Controller
             ->orWhere('birthday', 'LIKE', '%' . $search_input . '%')
             ->orWhere('company_id', 'LIKE', '%' . $search_input . '%')
             ->orWhere('details', 'LIKE', '%' . $search_input . '%')
+            ->orWhereHas('company', function ($query) use ($search_input) {
+                $query->where('company_name', 'like', '%' . $search_input . '%');
+            })
             ->sortable()
             ->paginate(10)
             ->appends(request()->query());
