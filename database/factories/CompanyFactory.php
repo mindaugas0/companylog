@@ -15,7 +15,7 @@ class CompanyFactory extends Factory
     {
         return [
             'logo_src' => $this->faker->image(),
-            'name' => $this->faker->company(),
+            'company_name' => $this->faker->company(),
             'code' => rand(10000000, 999999999),
             'adress' => $this->faker->address(),
             'description' => $this->faker->paragraph(5),

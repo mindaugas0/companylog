@@ -12,7 +12,7 @@ class company extends Model
     use HasFactory;
     use Sortable;
 
-    public $sortable = ['id', 'name', 'code', 'adress', 'description'];
+    public $sortable = ['id', 'company_name', 'code', 'adress', 'description'];
 
     public $sortableAs = ['company_employee_count'];
 

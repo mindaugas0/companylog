@@ -24,7 +24,7 @@
             <th>@sortablelink('surname', 'Surname')</th>
             <th>@sortablelink('birthday', 'Birthday')</th>
             <th>@sortablelink('details', 'Details')</th>
-            <th>@sortablelink('Company.name', 'Company')</th>
+            <th>@sortablelink('Company.company_name', 'Company')</th>
             <th>Action</th>
         </tr>
         @foreach ($employees as $employee)
@@ -37,7 +37,7 @@
                 <td>{{$employee->surname}}</td>
                 <td>{{$employee->birthday}}</td>
                 <td>{{$employee->details}}</td>
-                <td>{{$employee->Company->name}}</td>
+                <td>{{$employee->Company->company_name}}</td>
                 <td>
                     <a class="btn btn-primary" href="{{route('employee.edit', [$employee])}}">Edit</a>
                     <a class="btn btn-secondary" href="{{route('employee.show', [$employee])}}">Show</a>

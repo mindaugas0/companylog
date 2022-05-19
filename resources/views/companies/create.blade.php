@@ -24,10 +24,10 @@
                     <form method="POST" action="{{route('company.store')}}" enctype="multipart/form-data">
                         @csrf
                         <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end" >Company Name</label>
+                            <label for="company_name" class="col-md-4 col-form-label text-md-end" >Company Name</label>
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name">
-                                @error('name')
+                                <input id="company_name" type="text" class="form-control @error('company_name') is-invalid @enderror" name="company_name">
+                                @error('company_name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

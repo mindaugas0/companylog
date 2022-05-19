@@ -43,7 +43,7 @@ class CompanyController extends Controller
     {
         $request->validate([
             "logo_src" => "required|file|max:514",
-            "name" => "required|alpha|min:3|max:30",
+            "company_name" => "required|alpha|min:3|max:30",
             "code" => "required|numeric|digits:9",
             "adress" => "required|min:15|max:50",
             "description" => "required|min:20|max:500"
@@ -56,7 +56,7 @@ class CompanyController extends Controller
         $request->logo_src->move(public_path('images'), $imageName);
         $company->logo_src = $imageName;
 
-        $company->name = $request->name;
+        $company->company_name = $request->company_name;
         $company->code = $request->code;
         $company->adress = $request->adress;
         $company->description = $request->description;
@@ -99,7 +99,7 @@ class CompanyController extends Controller
     {
         $request->validate([
             "logo_src" => "required|file|max:514",
-            "name" => "required|alpha|min:3|max:30",
+            "company_name" => "required|alpha|min:3|max:30",
             "code" => "required|numeric|digits:9",
             "adress" => "required|min:15|max:50",
             "description" => "required|min:20|max:500"
@@ -112,7 +112,7 @@ class CompanyController extends Controller
             $company->logo_src = $imageName;
         }
 
-        $company->name = $request->name;
+        $company->company_name = $request->company_name;
         $company->code = $request->code;
         $company->adress = $request->adress;
         $company->description = $request->description;
@@ -142,7 +142,7 @@ class CompanyController extends Controller
     public function companySearch(Request $request)
     {
         $search_input = $request->search_input;
-        $companies = company::where('name', 'LIKE', '%' . $search_input . '%')
+        $companies = company::where('company_name', 'LIKE', '%' . $search_input . '%')
             ->orWhere('code', 'LIKE', '%' . $search_input . '%')
             ->orWhere('adress', 'LIKE', '%' . $search_input . '%')
             ->orWhere('description', 'LIKE', '%' . $search_input . '%')

@@ -21,7 +21,7 @@
         <tr>
             <th>@sortablelink('id', 'ID')</th>
             <th>Logo</th>
-            <th>@sortablelink('name','Company name')</th>
+            <th>@sortablelink('company_name','Company name')</th>
             <th>@sortablelink('code','Code')</th>
             <th>@sortablelink('adress','Adress')</th>
             <th>@sortablelink('description','Description')</th>
@@ -32,9 +32,9 @@
             <tr>
                 <td>{{$company->id}}</td>
                 <td>
-                    <a href="/images/{{$company->logo_src}}" target="_blank"><img src="/images/{{$company->logo_src}}" alt="{{$company->name}}" width="150" height="150"></a>
+                    <a href="/images/{{$company->logo_src}}" target="_blank"><img src="/images/{{$company->logo_src}}" alt="{{$company->company_name}}" width="150" height="150"></a>
                 </td>
-                <td>{{$company->name}}</td>
+                <td>{{$company->company_name}}</td>
                 <td>{{$company->code}}</td>
                 <td>{{$company->adress}}</td>
                 <td>{{$company->description}}</td>

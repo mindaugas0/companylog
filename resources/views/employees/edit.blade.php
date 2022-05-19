@@ -80,9 +80,9 @@
                                 <select id="company_id" class="form-control @error('company_id') is-invalid @enderror" name="company_id">
                                 @foreach ($select_values as $company)
                                     @if($company->id==$employee->company_id)    
-                                        <option value="{{$company->id}}" selected>{{$company->name}}</option>
+                                        <option value="{{$company->id}}" selected>{{$company->company_name}}</option>
                                     @else
-                                        <option value="{{$company->id}}">{{$company->name}}</option>
+                                        <option value="{{$company->id}}">{{$company->company_name}}</option>
                                     @endif
                                 @endforeach
                                 </select>
